@@ -33,12 +33,7 @@ var actions = [
 	"jumped over a fence to defeat"
 ];
 
-var heroGender;
-if (Math.random() < 0.5) {
-	heroGender = "heroine";
-} else {
-	heroGender = "hero";
-}
+
 
 /*
 	TODO: The following three lines of code have a lot of repetition and are
@@ -51,6 +46,13 @@ function newAdventure() {
 		var r = namearray[Math.floor(Math.random() * namearray.length)];
 		return r
 	}
+
+var heroGender;
+if (Math.random() < 0.5) {
+	heroGender = "heroine";
+} else {
+	heroGender = "hero";
+}
 
 	var chosenMonster = random1(monsters)/*[Math.floor(Math.random() * monsters.length)];*/
 	var chosenWeapon = random1(weapons)/*[Math.floor(Math.random() * weapons.length)];*/
@@ -69,6 +71,8 @@ function newAdventure() {
 document.getElementById("adventure").innerHTML = output;
 }
 document.getElementById("new_adventure").onclick = newAdventure; 
+window.onload = newAdventure;
+// or: newAdventure();
 
 
 /*
